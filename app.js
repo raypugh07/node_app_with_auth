@@ -69,7 +69,7 @@ app.use('/users', usersRouter);
     return next();
   }
 
-  oktaClient.getUser(req.userinfo.sub)
+  oktaClient.getUser(req.userinfo.sub)   // code to the left was failing login
     .then(user => {
       req.user = user;
       res.locals.user = user;
